@@ -20,19 +20,22 @@
 
     <div class="article__meta">
       <ul class="tags">
-        <li class="tags__item"><a href="#">자바</a></li>
-        <li class="tags__item"><a href="#">자바스크립트</a></li>
-        <li class="tags__item"><a href="#">자바스크립트</a></li>
-        <li class="tags__item"><a href="#">자바스크립트</a></li>
-        <li class="tags__item"><a href="#">자바스크립트</a></li>
+        <li class="tags__item"><a href="#">Java</a></li>
+        <li class="tags__item"><a href="#">Javascript</a></li>
+        <li class="tags__item"><a href="#">Node.js</a></li>
+        <li class="tags__item"><a href="#">Spring</a></li>
+        <li class="tags__item"><a href="#">Linux</a></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import childTransition from '@/mixins/childTransition'
+
 export default {
   name: 'Slug',
+  mixins: [childTransition],
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
@@ -48,18 +51,20 @@ export default {
 </script>
 
 <style scoped>
+.article__publish-date {
+  color: #7589a2;
+  font-size: 14px;
+}
+
 .article__category {
   color: #6a55fa;
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 .article__title {
   color: #00a9a2;
-  font-size: 48px;
-}
-
-.article__publish-date {
-  color: #7589a2;
+  font-size: 32px;
 }
 
 .article__meta {
@@ -90,6 +95,16 @@ export default {
     color: #1a2738;
     padding: 5px 10px;
     display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  .article__publish-date,
+  .article__category {
+    font-size: 16px;
+  }
+  .article__title {
+    font-size: 48px;
   }
 }
 </style>

@@ -72,7 +72,7 @@ export default {
 }
 
 .card__title {
-  color: #fff;
+  color: #95a4b7;
   font-size: 18px;
   margin-bottom: 8px;
 }

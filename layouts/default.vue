@@ -3,6 +3,7 @@
     <v-top-bar @toggle-sidebar="toggleSidebar" />
     <v-side-bar :show-sidebar="showSidebar" @toggle-sidebar="toggleSidebar" />
     <Nuxt />
+    <v-hero />
   </div>
 </template>
 

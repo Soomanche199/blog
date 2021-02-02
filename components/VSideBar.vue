@@ -1,24 +1,31 @@
 <template>
-  <ul class="navbar" :class="{ active: showSidebar }">
-    <li class="navbar__header">
-      <n-link to="/" class="navbar__logo">Sooman</n-link>
-      <fa icon="times" class="navbar__toggle" @click.prevent="closeEmit" />
-    </li>
-    <li class="navbar__search">
-      <div class="input-group">
-        <input type="text" placeholder="Search" spellcheck="false" />
-        <fa icon="search" />
-      </div>
-    </li>
-    <li class="navbar__link">
-      <n-link to="/"><fa icon="home" /> Home</n-link>
-    </li>
-    <li v-for="(link, index) in links" :key="link" class="navbar__link">
-      <n-link :to="'/' + link.toLowerCase()"
-        ><fa :icon="icons[index]" /> {{ link }}</n-link
-      >
-    </li>
-  </ul>
+  <div>
+    <ul class="navbar" :class="{ active: showSidebar }">
+      <li class="navbar__header">
+        <n-link to="/" class="navbar__logo">Sooman</n-link>
+        <fa icon="times" class="navbar__toggle" @click.prevent="closeEmit" />
+      </li>
+      <li class="navbar__search">
+        <div class="input-group">
+          <input type="text" placeholder="Search" spellcheck="false" />
+          <fa icon="search" />
+        </div>
+      </li>
+      <li class="navbar__link">
+        <n-link to="/">
+          <fa icon="home" />
+          Home
+        </n-link>
+      </li>
+      <li v-for="(link, index) in links" :key="link" class="navbar__link">
+        <n-link :to="'/' + link.toLowerCase()">
+          <fa :icon="icons[index]" />
+          {{ link }}
+        </n-link>
+      </li>
+    </ul>
+    <div class="navbar__overlay"></div>
+  </div>
 </template>
 
 <script>
@@ -66,10 +73,6 @@ export default {
   transition: transform 0.5s;
   z-index: 10;
   box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
-
-  &.active {
-    transform: translateX(0);
-  }
 }
 
 .navbar__header {
@@ -150,6 +153,27 @@ export default {
       margin-right: 28px;
     }
   }
+
+  & .nuxt-link-active:not([href='/']) {
+    background-color: #00a9a2;
+    color: white;
+  }
+}
+
+.navbar__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar.active {
+  transform: translateX(0);
+
+  & ~ .navbar__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 @media (min-width: 1264px) {
@@ -163,6 +187,9 @@ export default {
     margin: 0 auto;
   }
   .navbar__toggle {
+    display: none;
+  }
+  .navbar__overlay {
     display: none;
   }
 }
