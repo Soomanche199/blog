@@ -1,17 +1,19 @@
 <template>
-  <div class="page index"></div>
+  <div class="page blog">
+    <nuxt-child />
+  </div>
 </template>
 
 <script>
 import parentTransition from '@/mixins/parentTransition'
 
 export default {
+  name: 'Blog',
   mixins: [parentTransition],
 }
 </script>
-
-<style>
-.index {
-  background-color: transparent;
+<style scoped>
+.blog .container {
+  margin-top: 70px;
 }
 </style>

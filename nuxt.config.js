@@ -17,7 +17,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['assets/styles/main.pcss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -31,7 +31,37 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/fontawesome',
+    '@nuxtjs/google-fonts',
   ],
+
+  googleFonts: {
+    families: {
+      'Dancing+Script': [700],
+      'Noto+Sans+KR': [400, 500, 700],
+    },
+  },
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      // if you have bought the Pro packages
+      // list the icons you want to add, not listed icons will be tree-shaked
+      solid: [
+        'faBars',
+        'faHome',
+        'faAddressCard',
+        'faBriefcase',
+        'faPen',
+        'faEnvelope',
+        'faTimes',
+        'faSearch',
+      ],
+      // include all icons. But dont do this.
+      brands: [],
+      regular: [],
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -43,5 +73,17 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      plugins: {
+        'postcss-normalize': {},
+      },
+      preset: {
+        features: {
+          'nesting-rules': true,
+          'custom-media-queries': { importFrom: 'assets/styles/main.pcss' },
+        },
+      },
+    },
+  },
 }
