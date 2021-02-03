@@ -14,8 +14,3 @@ export default {
   mixins: [parentTransition],
 }
 </script>
-<style scoped>
-.blog .container {
-  margin-top: 70px;
-}
-</style>

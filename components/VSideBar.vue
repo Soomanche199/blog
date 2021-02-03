@@ -12,19 +12,19 @@
         </div>
       </li>
       <li class="navbar__link">
-        <n-link to="/">
+        <n-link to="/" @click.native="closeEmit">
           <fa icon="home" />
           Home
         </n-link>
       </li>
       <li v-for="(link, index) in links" :key="link" class="navbar__link">
-        <n-link :to="'/' + link.toLowerCase()">
+        <n-link :to="'/' + link.toLowerCase()" @click.native="closeEmit">
           <fa :icon="icons[index]" />
           {{ link }}
         </n-link>
       </li>
     </ul>
-    <div class="navbar__overlay"></div>
+    <div class="navbar__overlay" @click="closeEmit"></div>
   </div>
 </template>
 
@@ -166,13 +166,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
 }
 
 .navbar.active {
   transform: translateX(0);
 
   & ~ .navbar__overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
   }
 }
 
@@ -180,7 +183,7 @@ export default {
   .navbar {
     transform: translateX(0);
     width: 300px;
-    z-index: 1;
+    z-index: 2;
   }
   .navbar__logo {
     padding-left: 0;

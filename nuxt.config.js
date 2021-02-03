@@ -58,7 +58,15 @@ export default {
         'faSearch',
       ],
       // include all icons. But dont do this.
-      brands: [],
+      brands: [
+        'faJsSquare',
+        'faCss3Alt',
+        'faJava',
+        'faCentos',
+        'faUbuntu',
+        'faAws',
+        'faVuejs',
+      ],
       regular: [],
     },
   },
