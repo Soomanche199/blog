@@ -45,7 +45,14 @@ export default {
   margin-top: 15px;
   color: #7589a2;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  overflow: hidden;
 }
+
+.card__meta {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 .card__image {
   background-color: #7589a2;
   height: 192px;

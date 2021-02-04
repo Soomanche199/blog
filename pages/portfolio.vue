@@ -1,5 +1,13 @@
 <template>
-  <div class="page blog">s</div>
+  <div class="page portfolio">
+    <div class="container">
+      <ul class="tab">
+        <li>All</li>
+        <li>Private</li>
+        <li>Public</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>

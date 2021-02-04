@@ -15,9 +15,6 @@ export default {
       }
     },
   },
-  mounted() {
-    this.playable = true
-  },
 }
 </script>
 

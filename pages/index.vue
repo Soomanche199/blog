@@ -1,5 +1,7 @@
 <template>
-  <div class="page index"></div>
+  <div class="page index">
+    <div class="dummy"></div>
+  </div>
 </template>
 
 <script>
@@ -12,6 +14,6 @@ export default {
 
 <style>
 .index {
-  background-color: transparent;
+  display: none;
 }
 </style>
