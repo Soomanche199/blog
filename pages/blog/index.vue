@@ -20,6 +20,7 @@ import childTransition from '@/mixins/childTransition'
 export default {
   name: 'Index',
   mixins: [childTransition],
+  fetchOnServer: false,
   data: () => ({
     articles: [],
     pagination: {
