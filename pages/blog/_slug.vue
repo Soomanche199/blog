@@ -73,13 +73,8 @@ export default {
 
 .tags {
   margin-top: 25px;
-  display: block;
-
-  &::before {
-    content: '';
-    clear: both;
-    height: 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags__item {
@@ -88,7 +83,6 @@ export default {
   margin-right: 8px;
   margin-bottom: 8px;
   border-radius: 3px;
-  float: left;
 
   & a {
     text-decoration: none;

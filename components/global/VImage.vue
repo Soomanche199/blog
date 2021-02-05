@@ -1,16 +1,33 @@
 <template>
   <figure class="image">
-    <img :src="getSrc()" class="image__img" alt="" />
-    <figcaption v-if="caption" class="image__caption">{{ caption }}</figcaption>
+    <img
+      v-if="suffix !== 'svg'"
+      class="lozad"
+      :src="getImage.placeholder"
+      :data-src="getImage.src"
+      :alt="alt"
+    />
+    <img
+      v-else
+      class="lozad"
+      :src="getImage.placeholder"
+      :data-src="getImage"
+      :alt="alt"
+    />
+    <figcaption v-if="caption" class="image__caption">
+      <slot></slot>
+    </figcaption>
   </figure>
 </template>
 
 <script>
+import lozad from 'lozad'
+
 export default {
   name: 'VImage',
   props: {
     caption: {
-      type: [String, Boolean],
+      type: Boolean,
       default: false,
     },
     src: {
@@ -22,25 +39,30 @@ export default {
       default: '',
     },
   },
-  methods: {
-    getSrc() {
-      if (this.src.includes('http')) {
-        return this.src
-      }
+  computed: {
+    getImage() {
       return require(`~/assets/images/${this.src}`)
     },
+    suffix() {
+      return this.src.split('.').pop()
+    },
+  },
+  mounted() {
+    const observer = lozad()
+    observer.observe()
   },
 }
 </script>
 
 <style>
-.image {
+img {
   width: 100%;
-}
+  transition: all ease 0.3s;
+  filter: blur(15px);
 
-.image__img {
-  object-fit: cover;
-  width: 100%;
+  &[data-loaded='true'] {
+    filter: unset;
+  }
 }
 
 .image__caption {

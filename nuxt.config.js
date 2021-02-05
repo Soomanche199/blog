@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tmp_blog',
+    title: 'Sooman Che | Full-stack Developer',
     htmlAttrs: {
       lang: 'en',
     },
@@ -95,6 +95,46 @@ export default {
           'custom-media-queries': { importFrom: 'assets/styles/main.pcss' },
         },
       },
+    },
+    extend(config, ctx) {
+      const existingImageLoader = config.module.rules.find(
+        (rule) =>
+          rule.test.test('.png') &&
+          rule.test.test('.jpg') &&
+          rule.test.test('.gif') &&
+          rule.test.test('.webp') &&
+          rule.test.test('.svg')
+      )
+
+      if (!existingImageLoader) {
+        throw new Error(
+          [
+            'Could not find the existing image loader rule.',
+            ' The webpack config has been edited, perhaps by another Nuxt module.',
+            ' To resolve this error try placing this module first in your Nuxt modules array',
+            ' or use a custom webpack configuration instead.',
+          ].join('')
+        )
+      }
+
+      /* Update the loader so it's no longer respo∏nsible for png/jpg/webp files */
+      if (existingImageLoader) {
+        existingImageLoader.test = /\.(svg|gif)$/i
+      }
+
+      /* Add the new loader rule */
+      config.module.rules.push({
+        test: /\.(png|jpe?g|webp)$/,
+        loader: 'responsive-loader',
+        options: {
+          placeholder: true,
+          placeholderSize: 20,
+          quality: 60,
+          sizes: [960],
+          adapter: require('responsive-loader/sharp'),
+          format: 'webp',
+        },
+      })
     },
   },
 }

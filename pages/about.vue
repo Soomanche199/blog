@@ -22,7 +22,7 @@
           <p>"Actions speak louder than words!"</p>
         </div>
         <div class="about__profile--image">
-          <img src="~assets/images/profile.svg" alt="" />
+          <v-image src="profile.png" alt="profile" />
         </div>
       </div>
       <h2><strong>Frontend</strong> Skills</h2>
@@ -156,7 +156,7 @@ h2 ~ ul {
 }
 
 h2 ~ ul li:hover {
-  border: 1px solid rgba(0, 169, 162);
+  border: 1px solid rgba(0, 169, 162, 1);
 
   & svg {
     transform: scale(1.2);

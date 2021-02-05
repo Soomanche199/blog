@@ -22,5 +22,10 @@ export default {
   text-align: center;
   font-size: 16px;
   background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+
+  & .container {
+    padding-bottom: 0;
+  }
 }
 </style>

@@ -1,10 +1,11 @@
 ---
 category: javascript
-title: Getting started4
+title: Getting started1
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
+image: bg2.jpg
 ---
 
-<v-image src="bg2.jpg" caption="This is image test"></v-image>
+<v-image src="bg2.jpg" caption>This is image test</v-image>
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 

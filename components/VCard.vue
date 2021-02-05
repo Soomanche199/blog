@@ -2,12 +2,12 @@
   <div class="card">
     <div class="card__meta">
       <div
-        class="card__image"
-        style="
-          background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/pike-place.jpg')
-            no-repeat center center;
-          background-size: cover;
-        "
+        class="card__image lozad"
+        :style="{
+          background: `url(${getImage.placeholder}) no-repeat center center`,
+          backgroundSize: 'cover',
+        }"
+        :data-background-image="getImage"
       ></div>
     </div>
     <div class="card__content">
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import lozad from 'lozad'
+
 export default {
   name: 'VCard',
   props: {
@@ -36,21 +38,29 @@ export default {
       required: true,
     },
   },
+  computed: {
+    getImage() {
+      return require(`~/assets/images/${this.article.image}`)
+    },
+  },
+  mounted() {
+    const observer = lozad()
+    observer.observe()
+  },
 }
 </script>
 
 <style>
 .card {
-  background-color: #27394f;
-  margin-top: 15px;
+  margin-bottom: 25px;
   color: #7589a2;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   border-radius: 5px;
   overflow: hidden;
 }
 
 .card__meta {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.16), 3px 0 6px rgba(0, 0, 0, 0.23);
 }
 
 .card__image {
@@ -121,7 +131,7 @@ export default {
   .card {
     max-width: 700px;
     display: flex;
-    margin: 0 auto 24px;
+    margin: 0 auto 50px;
 
     &.alt {
       flex-direction: row-reverse;
