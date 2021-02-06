@@ -1,14 +1,7 @@
 <template>
   <div class="card">
     <div class="card__meta">
-      <div
-        class="card__image lozad"
-        :style="{
-          background: `url(${getImage.placeholder}) no-repeat center center`,
-          backgroundSize: 'cover',
-        }"
-        :data-background-image="getImage"
-      ></div>
+      <v-bg-image :src="article.image" class="card__image" />
     </div>
     <div class="card__content">
       <div class="card__body">
@@ -28,8 +21,6 @@
 </template>
 
 <script>
-import lozad from 'lozad'
-
 export default {
   name: 'VCard',
   props: {
@@ -37,15 +28,6 @@ export default {
       type: Object,
       required: true,
     },
-  },
-  computed: {
-    getImage() {
-      return require(`~/assets/images/${this.article.image}`)
-    },
-  },
-  mounted() {
-    const observer = lozad()
-    observer.observe()
   },
 }
 </script>
@@ -64,8 +46,9 @@ export default {
 }
 
 .card__image {
-  background-color: #7589a2;
   height: 192px;
+  background: #95a4b7 no-repeat center center;
+  background-size: cover;
 }
 
 .card__content {
@@ -132,10 +115,6 @@ export default {
     max-width: 700px;
     display: flex;
     margin: 0 auto 50px;
-
-    &.alt {
-      flex-direction: row-reverse;
-    }
   }
 
   .card__meta {
@@ -151,6 +130,14 @@ export default {
 
   .card:hover .card__image {
     transform: scale(1.05);
+  }
+
+  .card.alt {
+    flex-direction: row-reverse;
+
+    & .card__meta {
+      box-shadow: -3px 0 6px rgba(0, 0, 0, 0.16), -3px 0 6px rgba(0, 0, 0, 0.23);
+    }
   }
 }
 </style>

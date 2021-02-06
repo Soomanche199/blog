@@ -59,6 +59,8 @@ export default {
         'faEnvelope',
         'faTimes',
         'faSearch',
+        'faUser',
+        'faMapMarkedAlt',
       ],
       // include all icons. But dont do this.
       brands: [
@@ -69,6 +71,7 @@ export default {
         'faUbuntu',
         'faAws',
         'faVuejs',
+        'faSlack',
       ],
       regular: [],
     },
@@ -127,8 +130,6 @@ export default {
         test: /\.(png|jpe?g|webp)$/,
         loader: 'responsive-loader',
         options: {
-          placeholder: true,
-          placeholderSize: 20,
           quality: 60,
           sizes: [960],
           adapter: require('responsive-loader/sharp'),

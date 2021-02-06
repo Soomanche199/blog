@@ -37,7 +37,7 @@ export default {
     this.pagination.currentPage = this.$route.query.page || 1
 
     this.pagination.totalArticleLength = (
-      await this.$content('articles').only('slug').fetch()
+      await this.$content('articles').only(['slug', 'image']).fetch()
     ).length
 
     this.articles = await this.$content('articles')

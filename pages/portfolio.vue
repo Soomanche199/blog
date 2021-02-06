@@ -21,20 +21,20 @@
           class="portfolio__card-wrapper"
           :class="i % 2 === 0 ? 'public' : 'private'"
         >
-          <v-image src="bg2.jpg" class="portfolio__card" caption>
-            <h3>Project Name{{ i }}</h3>
-            <p>Graphic</p>
-            <fa :icon="['fab', 'vuejs']" />
-          </v-image>
-          <!--          <figure class="portfolio__card">-->
-          <!--            <img src="~assets/images/bg2.jpg" alt="" />-->
-          <!--            <figcaption>-->
-          <!--              <h3>Project Name{{ i }}</h3>-->
-          <!--              <p>Graphic</p>-->
-          <!--              <fa :icon="['fab', 'vuejs']" />-->
-          <!--              <a class="image-link" href="img/portfolio/img-1.jpg"></a>-->
-          <!--            </figcaption>-->
-          <!--          </figure>-->
+          <!--          <v-image src="bg2.jpg" class="portfolio__card" caption>-->
+          <!--            <h3>Project Name{{ i }}</h3>-->
+          <!--            <p>Graphic</p>-->
+          <!--            <fa :icon="['fab', 'vuejs']" />-->
+          <!--          </v-image>-->
+          <figure class="portfolio__card">
+            <img src="~assets/images/bg2.jpg" alt="" />
+            <figcaption>
+              <h3>Project Name{{ i }}</h3>
+              <p>Graphic</p>
+              <fa :icon="['fab', 'vuejs']" />
+              <a class="image-link" href="img/portfolio/img-1.jpg"></a>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -137,16 +137,16 @@ export default {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  background-color: #00a9a2;
   display: flex;
   margin-bottom: 15px;
+  transition: background-color 0.3s;
 
-  & >>> img {
+  & img {
     width: 100%;
     transition: opacity 0.3s;
   }
 
-  & >>> .image__caption {
+  & figcaption {
     position: absolute;
     top: 0;
     left: 0;
@@ -194,11 +194,13 @@ export default {
 }
 
 .portfolio__card:hover {
-  & >>> img {
+  background-color: #00a9a2;
+
+  & img {
     opacity: 0.25;
   }
 
-  & >>> figcaption {
+  & figcaption {
     opacity: 1;
 
     & p {

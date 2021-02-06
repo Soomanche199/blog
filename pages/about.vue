@@ -22,7 +22,7 @@
           <p>"Actions speak louder than words!"</p>
         </div>
         <div class="about__profile--image">
-          <v-image src="profile.png" alt="profile" />
+          <img src="~assets/images/profile.png" />
         </div>
       </div>
       <h2><strong>Frontend</strong> Skills</h2>
