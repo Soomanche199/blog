@@ -145,6 +145,6 @@ export default {
   },
 
   googleAnalytics: {
-    id: 'UA-71949752-2',
+    id: 'UA-71949752-3',
   },
 }
