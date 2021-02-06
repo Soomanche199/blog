@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/fontawesome',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/google-analytics',
   ],
 
   googleFonts: {
@@ -141,5 +142,9 @@ export default {
 
   generate: {
     fallback: true,
+  },
+
+  googleAnalytics: {
+    id: 'G-Y1VRBQMY1T',
   },
 }
