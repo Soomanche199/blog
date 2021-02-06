@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page" data-simplebar>
     <div class="container">
       <div class="contact">
         <div class="contact__info">
@@ -40,6 +40,7 @@
 
 <script>
 import parentTransition from '@/mixins/parentTransition'
+import 'simplebar'
 
 export default {
   name: 'Contact',
@@ -66,17 +67,21 @@ export default {
     submitForm(ev) {
       this.loading = true
       const form = ev.target
-      const data = new FormData(form)
+      const data = new FormData()
+      data.append('email', this.form.email)
+      data.append('message', [this.form.name, this.form.comment].join(' : '))
       const xhr = new XMLHttpRequest()
       xhr.open(form.method, form.action)
       xhr.setRequestHeader('Accept', 'application/json')
       xhr.onreadystatechange = () => {
         if (xhr.readyState !== XMLHttpRequest.DONE) return
         if (xhr.status === 200) {
-          form.reset()
-          alert('SUCCESS')
+          this.form.name = ''
+          this.form.email = ''
+          this.form.comment = ''
+          alert('Thank you!! I will reply as soon as possible 😉')
         } else {
-          alert('Error')
+          alert('Invalid information.')
         }
         this.loading = false
       }

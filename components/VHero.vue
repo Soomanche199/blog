@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 section {
   top: 0;
   left: 0;

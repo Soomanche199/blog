@@ -1,8 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="container">
-      <div>Copyright © 2021 Sooman</div>
-    </div>
+    <div>Copyright © 2021 Sooman</div>
   </footer>
 </template>
 
@@ -16,7 +14,7 @@ export default {
 .footer {
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   padding-top: 15px;
   padding-bottom: 10px;
   text-align: center;
