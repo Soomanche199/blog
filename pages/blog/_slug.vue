@@ -36,10 +36,14 @@ import childTransition from '@/mixins/childTransition'
 export default {
   name: 'Slug',
   mixins: [childTransition],
-  async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
-
-    return { article }
+  data: () => ({
+    article: [],
+  }),
+  async fetch() {
+    this.article = await this.$content(
+      'articles',
+      this.$route.params.slug
+    ).fetch()
   },
   methods: {
     formatDate(date) {
