@@ -72,6 +72,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -135,13 +136,18 @@ export default {
     id: 'UA-71949752-3',
   },
 
+  sitemap: {
+    hostname: global.siteUrl,
+    routes() {
+      return getRoutes()
+    },
+    trailingSlash: false,
+  },
+
   generate: {
     fallback: true,
-    async routes() {
-      const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).only(['path']).fetch()
-
-      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+    routes() {
+      return getRoutes()
     },
   },
 }
