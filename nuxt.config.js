@@ -134,10 +134,6 @@ export default {
     id: 'UA-71949752-3',
   },
 
-  publicRuntimeConfig: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-  },
-
   generate: {
     fallback: true,
   },

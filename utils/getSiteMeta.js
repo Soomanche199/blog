@@ -52,5 +52,8 @@ export default (meta) => {
       name: 'twitter:image',
       content: (meta && meta.mainImage) || global.siteUrl + global.mainImage,
     },
+    { name: 'twitter:label1', content: 'Written by' },
+    { name: 'twitter:data1', content: global.author || '' },
+    { name: 'twitter:label2', content: 'Filed under' },
   ]
 }

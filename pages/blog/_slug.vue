@@ -33,6 +33,7 @@
 <script>
 import childTransition from '@/mixins/childTransition'
 import getSiteMeta from '@/utils/getSiteMeta'
+import metaGlobal from '@/utils/metaGlobal'
 
 export default {
   name: 'Slug',
@@ -63,9 +64,6 @@ export default {
           property: 'article:tag',
           content: this.article.tags ? this.article.tags.toString() : '',
         },
-        { name: 'twitter:label1', content: 'Written by' },
-        { name: 'twitter:data1', content: global.author || '' },
-        { name: 'twitter:label2', content: 'Filed under' },
         {
           name: 'twitter:data2',
           content: this.article.tags ? this.article.tags.toString() : '',
@@ -75,7 +73,7 @@ export default {
         {
           hid: 'canonical',
           rel: 'canonical',
-          href: `${this.$config.baseUrl}/blog/${this.$route.params.slug}`,
+          href: this.meta[2].content,
         },
       ],
     }
@@ -86,8 +84,9 @@ export default {
         type: 'article',
         title: this.article.title,
         description: this.article.description,
-        url: `${this.$config.baseUrl}/blog/${this.$route.params.slug}`,
-        mainImage: `${this.$config.baseUrl}/${this.article.image}`,
+        url: `${metaGlobal.siteUrl}blog/${this.$route.params.slug}`,
+        mainImage:
+          metaGlobal.siteUrl + require(`~/assets/images/${this.article.image}`),
       }
       return getSiteMeta(metaData)
     },
