@@ -16,7 +16,7 @@
     <h1 class="article__title">{{ article.title }}</h1>
     <div class="article__writer"></div>
 
-    <nuxt-content :document="article"></nuxt-content>
+    <nuxt-content :document="article" />
 
     <div class="article__meta">
       <ul class="tags">
@@ -70,7 +70,7 @@ export default {
         {
           hid: 'canonical',
           rel: 'canonical',
-          href: this.meta[2].content,
+          href: metaGlobal.siteUrl,
         },
       ],
     }
@@ -81,7 +81,7 @@ export default {
         type: 'article',
         title: this.article.title,
         description: this.article.description,
-        url: `${metaGlobal.siteUrl}blog/${this.$route.params.slug}`,
+        url: `${metaGlobal.siteUrl}/blog/${this.$route.params.slug}`,
         mainImage:
           this.article.image &&
           require(`~/assets/images/${this.article.image}`).src,
