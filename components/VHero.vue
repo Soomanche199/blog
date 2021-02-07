@@ -43,6 +43,7 @@ section {
     transition: transform 0.5s;
     transform-origin: left;
     transform: scaleX(0);
+    will-change: transform;
 
     &::before {
       content: '';
@@ -54,6 +55,7 @@ section {
       background-color: #00a9a2;
       transform-origin: right;
       transition: 0.5s;
+      will-change: transform;
     }
 
     &.play {
@@ -78,6 +80,7 @@ section {
     transition: transform 0.5s;
     transform-origin: right;
     transform: scaleX(0);
+    will-change: transform;
 
     &::before {
       content: '';
@@ -89,6 +92,7 @@ section {
       background-color: #6a55fa;
       transform-origin: right;
       transition: 0.5s;
+      will-change: transform;
     }
     &.play {
       transform: scaleX(1);
