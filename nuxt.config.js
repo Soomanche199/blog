@@ -140,10 +140,6 @@ export default {
     },
   },
 
-  generate: {
-    fallback: true,
-  },
-
   googleAnalytics: {
     id: 'UA-71949752-3',
   },

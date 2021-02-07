@@ -6,7 +6,7 @@
         <fa icon="times" class="navbar__toggle" @click.prevent="closeEmit" />
       </li>
       <li class="navbar__search">
-        <v-input placeholder="Search">
+        <v-input v-model="searchKeyword" placeholder="Search">
           <fa icon="search" />
         </v-input>
       </li>
@@ -42,17 +42,6 @@ export default {
     searchKeyword: '',
   }),
   methods: {
-    async indicate(event, link) {
-      const marker = this.$el.querySelector('.navbar--marker')
-
-      marker.style.top = event.target.offsetTop + 'px'
-      marker.style.width = event.target.offsetWidth + 'px'
-
-      const routeName = link === undefined ? 'index' : link.toLowerCase()
-
-      await this.$router.push({ name: routeName })
-      this.closeEmit()
-    },
     closeEmit() {
       this.$emit('toggle-sidebar', false)
     },
@@ -70,8 +59,9 @@ export default {
   background-color: #1a2738;
   transform: translateX(-100%);
   transition: transform 0.5s;
+  will-change: transform;
   z-index: 10;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .navbar__header {
