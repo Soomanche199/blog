@@ -53,6 +53,9 @@ export default {
     isotope: {},
   }),
   mounted() {
+    // if (process.server) {
+    //   return
+    // }
     const imagesLoaded = require('imagesloaded')
     const Isotope = require('isotope-layout')
     const grid = document.querySelector('.portfolio__content')

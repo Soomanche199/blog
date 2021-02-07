@@ -149,6 +149,7 @@ export default {
     routes() {
       return getRoutes()
     },
+    trailingSlash: false,
   },
   loading: {
     color: '#00a9a2',
