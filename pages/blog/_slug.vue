@@ -85,7 +85,6 @@ export default {
         title: this.article.title,
         description: this.article.description,
         url: `${metaGlobal.siteUrl}blog/${this.$route.params.slug}`,
-        mainImage: require(`~/assets/images/${this.article.image}`).src,
       }
       return getSiteMeta(metaData)
     },
