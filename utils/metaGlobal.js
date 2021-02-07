@@ -12,6 +12,6 @@ export default {
   githubURL: 'https://github.com/Sooman-Che',
   siteTitle: 'Sooman Che | Full-stack Developer',
   siteDesc: 'Records is the rule of memory.',
-  mainImage: '/intro.png',
+  mainImage: `${process.env.BASE_URL}/intro.png`,
   siteType: 'website',
 }
