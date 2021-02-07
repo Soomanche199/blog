@@ -30,7 +30,7 @@ export default (meta) => {
     {
       hid: 'og:image',
       property: 'og:image',
-      content: (meta && meta.mainImage) || global.mainImage,
+      content: (meta && meta.mainImage) || global.siteUrl + global.mainImage,
     },
     {
       hid: 'twitter:url',
@@ -50,7 +50,7 @@ export default (meta) => {
     {
       hid: 'twitter:image',
       name: 'twitter:image',
-      content: (meta && meta.mainImage) || global.mainImage,
+      content: (meta && meta.mainImage) || global.siteUrl + global.mainImage,
     },
   ]
 }

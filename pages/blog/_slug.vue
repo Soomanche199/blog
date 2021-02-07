@@ -75,7 +75,7 @@ export default {
         {
           hid: 'canonical',
           rel: 'canonical',
-          href: `${this.$config.baseUrl}/articles/${this.$route.params.slug}`,
+          href: `${this.$config.baseUrl}/blog/${this.$route.params.slug}`,
         },
       ],
     }
@@ -87,7 +87,7 @@ export default {
         title: this.article.title,
         description: this.article.description,
         url: `${this.$config.baseUrl}/blog/${this.$route.params.slug}`,
-        mainImage: this.article.image,
+        mainImage: `${this.$config.baseUrl}/${this.article.image}`,
       }
       return getSiteMeta(metaData)
     },

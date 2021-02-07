@@ -107,7 +107,7 @@ export default {
 }
 
 @media (min-width: 1264px) {
-  section {
+  .hero-logo {
     margin-left: 300px;
     width: calc(100% - 300px);
 
