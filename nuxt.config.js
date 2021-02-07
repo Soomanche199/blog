@@ -150,4 +150,8 @@ export default {
       return getRoutes()
     },
   },
+  loading: {
+    color: '#00a9a2',
+    height: '5px',
+  },
 }
