@@ -42,10 +42,7 @@ export default {
     article: [],
   }),
   async fetch() {
-    this.article = await this.$content(
-      'articles',
-      this.$route.params.slug
-    ).fetch()
+    this.article = await this.$content('blog', this.$route.params.slug).fetch()
   },
   head() {
     return {
