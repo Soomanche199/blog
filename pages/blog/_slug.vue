@@ -32,6 +32,7 @@
 
 <script>
 import childTransition from '@/mixins/childTransition'
+import getSiteMeta from '@/utils/getSiteMeta'
 
 export default {
   name: 'Slug',
@@ -44,6 +45,52 @@ export default {
       'articles',
       this.$route.params.slug
     ).fetch()
+  },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        ...this.meta,
+        {
+          property: 'article:published_time',
+          content: this.article.createdAt,
+        },
+        {
+          property: 'article:modified_time',
+          content: this.article.updatedAt,
+        },
+        {
+          property: 'article:tag',
+          content: this.article.tags ? this.article.tags.toString() : '',
+        },
+        { name: 'twitter:label1', content: 'Written by' },
+        { name: 'twitter:data1', content: global.author || '' },
+        { name: 'twitter:label2', content: 'Filed under' },
+        {
+          name: 'twitter:data2',
+          content: this.article.tags ? this.article.tags.toString() : '',
+        },
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `${this.$config.baseUrl}/articles/${this.$route.params.slug}`,
+        },
+      ],
+    }
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        type: 'article',
+        title: this.article.title,
+        description: this.article.description,
+        url: `${this.$config.baseUrl}/blog/${this.$route.params.slug}`,
+        mainImage: this.article.image,
+      }
+      return getSiteMeta(metaData)
+    },
   },
   methods: {
     formatDate(date) {

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="hero-logo">
     <h2 :class="isPlayable">sooman che</h2>
     <h3 :class="isPlayable">fullstack developer</h3>
   </section>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-section {
+.hero-logo {
   top: 0;
   left: 0;
   position: absolute;

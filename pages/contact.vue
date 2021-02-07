@@ -5,8 +5,8 @@
         <div class="contact__info">
           <h2>Lets get in touch</h2>
           <p>
-            We are consulting on <strong>overall development</strong> such as
-            planning, design, and implementation. Please contact us and we will
+            I am consulting on <strong>overall development</strong> such as
+            planning, design, and implementation. Please contact me and i will
             get back to you <strong>as soon as possible.</strong> Thank you for
             visiting. Have a nice day!
           </p>
@@ -22,7 +22,7 @@
           method="post"
           @submit.prevent="submitForm"
         >
-          <h2>Contact us</h2>
+          <h2>Contact me</h2>
           <v-input v-model="form.name" placeholder="Name">
             <fa icon="user" />
           </v-input>

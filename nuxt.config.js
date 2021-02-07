@@ -1,19 +1,47 @@
+import fontawesome from './configs/fontawesome'
+import global from './utils/metaGlobal'
+import getSiteMeta from './utils/getSiteMeta'
+
+const meta = getSiteMeta()
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Sooman Che | Full-stack Developer',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'en-GB',
     },
+    title: global.siteTitle,
     meta: [
+      ...meta,
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || '',
+      },
+      { property: 'og:site_name', content: global.siteName || '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || '',
+      },
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: global.siteName || '' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: global.siteUrl,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,45 +67,6 @@ export default {
     '@nuxtjs/google-analytics',
   ],
 
-  googleFonts: {
-    families: {
-      'Dancing+Script': [700],
-      'Noto+Sans+KR': [400, 500, 700],
-    },
-  },
-
-  fontawesome: {
-    component: 'fa',
-    icons: {
-      // if you have bought the Pro packages
-      // list the icons you want to add, not listed icons will be tree-shaked
-      solid: [
-        'faBars',
-        'faHome',
-        'faAddressCard',
-        'faBriefcase',
-        'faPen',
-        'faEnvelope',
-        'faTimes',
-        'faSearch',
-        'faUser',
-        'faMapMarkedAlt',
-      ],
-      // include all icons. But dont do this.
-      brands: [
-        'faJsSquare',
-        'faCss3Alt',
-        'faJava',
-        'faCentos',
-        'faUbuntu',
-        'faAws',
-        'faVuejs',
-        'faSlack',
-      ],
-      regular: [],
-    },
-  },
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
@@ -100,6 +89,7 @@ export default {
         },
       },
     },
+
     extend(config, ctx) {
       const existingImageLoader = config.module.rules.find(
         (rule) =>
@@ -111,22 +101,13 @@ export default {
       )
 
       if (!existingImageLoader) {
-        throw new Error(
-          [
-            'Could not find the existing image loader rule.',
-            ' The webpack config has been edited, perhaps by another Nuxt module.',
-            ' To resolve this error try placing this module first in your Nuxt modules array',
-            ' or use a custom webpack configuration instead.',
-          ].join('')
-        )
+        throw new Error([].join(''))
       }
 
-      /* Update the loader so it's no longer respo∏nsible for png/jpg/webp files */
       if (existingImageLoader) {
         existingImageLoader.test = /\.(svg|gif)$/i
       }
 
-      /* Add the new loader rule */
       config.module.rules.push({
         test: /\.(png|jpe?g|webp)$/,
         loader: 'responsive-loader',
@@ -140,7 +121,20 @@ export default {
     },
   },
 
+  googleFonts: {
+    families: {
+      'Dancing+Script': [700],
+      'Noto+Sans+KR': [400, 500, 700],
+    },
+  },
+
+  fontawesome,
+
   googleAnalytics: {
     id: 'UA-71949752-3',
+  },
+
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
 }
