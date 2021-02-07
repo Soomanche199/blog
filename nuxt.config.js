@@ -1,6 +1,7 @@
 import fontawesome from './configs/fontawesome'
 import global from './utils/metaGlobal'
 import getSiteMeta from './utils/getSiteMeta'
+import getRoutes from './utils/getRoutes'
 
 const meta = getSiteMeta()
 
@@ -136,5 +137,6 @@ export default {
 
   generate: {
     fallback: true,
+    getRoutes,
   },
 }
