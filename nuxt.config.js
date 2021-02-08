@@ -141,7 +141,7 @@ export default {
     routes() {
       return getRoutes()
     },
-    trailingSlash: false,
+    trailingSlash: true,
   },
 
   generate: {
@@ -149,8 +149,9 @@ export default {
     routes() {
       return getRoutes()
     },
-    trailingSlash: false,
+    trailingSlash: true,
   },
+
   loading: {
     color: '#00a9a2',
     height: '5px',
