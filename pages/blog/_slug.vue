@@ -38,11 +38,8 @@ import metaGlobal from '@/utils/metaGlobal'
 export default {
   name: 'Slug',
   mixins: [childTransition],
-  data: () => ({
-    article: [],
-  }),
-  async fetch() {
-    this.article = await this.$content('blog', this.$route.params.slug).fetch()
+  async asyncData({ $content, params }) {
+    return { article: await $content('blog', params.slug).fetch() }
   },
   head() {
     return {

@@ -4,7 +4,7 @@
   access any variable via object syntax global.yourVarName
 */
 export default {
-  siteUrl: 'https://sooman-che.github.io',
+  siteUrl: 'https://sooman-che.tk',
   siteName: 'Sooman Che | Full-stack Developer',
   author: 'Sooman Che',
   twitterHandle: '@sooman_che',
