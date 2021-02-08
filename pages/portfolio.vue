@@ -44,7 +44,6 @@
 
 <script>
 import parentTransition from '@/mixins/parentTransition'
-import 'simplebar'
 
 export default {
   name: 'Portfolio',
@@ -56,6 +55,7 @@ export default {
     // if (process.server) {
     //   return
     // }
+    require('simplebar')
     const imagesLoaded = require('imagesloaded')
     const Isotope = require('isotope-layout')
     const grid = document.querySelector('.portfolio__content')
