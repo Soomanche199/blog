@@ -143,6 +143,7 @@ export default {
   display: flex;
   margin-bottom: 15px;
   transition: background-color 0.3s;
+  will-change: top, left;
 
   & img {
     width: 100%;

@@ -45,6 +45,11 @@
             ><icons-icon-webpack
           /></v-svg>
         </li>
+        <li>
+          <v-svg view-box="0 0 32 32" width="1em" height="1em"
+            ><icons-icon-jquery
+          /></v-svg>
+        </li>
       </ul>
       <h2>Skills of <strong>Backend</strong></h2>
       <ul>

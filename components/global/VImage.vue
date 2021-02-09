@@ -59,8 +59,10 @@ export default {
   mounted() {
     const selector = this.$el.querySelector('.lozad')
     const observer = lozad(selector, {
-      loaded: (el) => {
-        this.loading = false
+      loaded: () => {
+        setTimeout(() => {
+          this.loading = false
+        }, 500)
       },
     })
     observer.observe()

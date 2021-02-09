@@ -20,11 +20,9 @@
 
     <div class="article__meta">
       <ul class="tags">
-        <li class="tags__item"><a href="#">Java</a></li>
-        <li class="tags__item"><a href="#">Javascript</a></li>
-        <li class="tags__item"><a href="#">Node.js</a></li>
-        <li class="tags__item"><a href="#">Spring</a></li>
-        <li class="tags__item"><a href="#">Linux</a></li>
+        <li v-for="tag in article.tags" :key="article.slug" class="tags__item">
+          <a href="#">{{ tag }}</a>
+        </li>
       </ul>
     </div>
   </div>

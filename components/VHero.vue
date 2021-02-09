@@ -60,6 +60,7 @@ export default {
 
     &.play {
       transform: scaleX(1);
+      will-change: transform;
 
       &::before {
         transform: scaleX(0);
