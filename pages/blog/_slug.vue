@@ -20,7 +20,7 @@
 
     <div class="article__meta">
       <ul class="tags">
-        <li v-for="tag in article.tags" :key="article.slug" class="tags__item">
+        <li v-for="tag in article.tags" :key="tag" class="tags__item">
           <a href="#">{{ tag }}</a>
         </li>
       </ul>

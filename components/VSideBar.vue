@@ -6,9 +6,23 @@
         <fa icon="times" class="navbar__toggle" @click.prevent="closeEmit" />
       </li>
       <li class="navbar__search">
-        <v-input v-model="searchKeyword" placeholder="Search">
+        <v-input v-model="searchKeyword" placeholder="Search Articles...">
           <fa icon="search" />
         </v-input>
+        <ul v-show="searchKeyword" class="search__list">
+          <li
+            v-for="article in articles"
+            :key="article.slug"
+            class="search__item"
+          >
+            <n-link
+              class="search__link"
+              :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+              @click.native="searchKeyword = ''"
+              >{{ article.title }}</n-link
+            >
+          </li>
+        </ul>
       </li>
       <li class="navbar__link">
         <n-link to="/" @click.native="closeEmit">
@@ -40,7 +54,21 @@ export default {
     links: ['About', 'Portfolio', 'Blog', 'Contact'],
     icons: ['address-card', 'briefcase', 'pen', 'envelope'],
     searchKeyword: '',
+    articles: [],
   }),
+  watch: {
+    async searchKeyword(keyword) {
+      if (!keyword) {
+        this.articles = []
+        return
+      }
+      this.articles = await this.$content('blog')
+        .limit(6)
+        .search(keyword)
+        .only(['title', 'slug'])
+        .fetch()
+    },
+  },
   methods: {
     closeEmit() {
       this.$emit('toggle-sidebar', false)
@@ -90,11 +118,30 @@ export default {
   padding-top: 25px;
   padding-bottom: 65px;
   position: relative;
+  width: 260px;
+  margin: 0 auto;
 
   & .input-group {
-    width: 260px;
-    margin: 0 auto;
     color: #7589a2;
+  }
+
+  & .search__list {
+    background-color: #172331;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    margin-top: 2px;
+
+    & .search__link {
+      padding: 8px 16px;
+      display: block;
+      text-decoration: none;
+      color: currentColor;
+
+      &:hover {
+        color: #6a55fa;
+      }
+    }
   }
 }
 

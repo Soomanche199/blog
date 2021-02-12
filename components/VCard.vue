@@ -1,7 +1,11 @@
 <template>
   <div class="card">
     <div class="card__meta">
-      <v-bg-image :src="article.image" class="card__image" />
+      <v-bg-image
+        :src="article.image"
+        :style="{ backgroundSize: article.imageSize }"
+        class="card__image"
+      />
     </div>
     <div class="card__content">
       <div class="card__body">

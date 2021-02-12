@@ -15,24 +15,42 @@
         </ul>
       </div>
       <div class="portfolio__content">
-        <div
-          v-for="i in 9"
-          :key="i"
-          class="portfolio__card-wrapper"
-          :class="i % 2 === 0 ? 'public' : 'private'"
-        >
-          <!--          <v-image src="bg2.jpg" class="portfolio__card" caption>-->
-          <!--            <h3>Project Name{{ i }}</h3>-->
-          <!--            <p>Graphic</p>-->
-          <!--            <fa :icon="['fab', 'vuejs']" />-->
-          <!--          </v-image>-->
+        <div class="portfolio__card-wrapper private">
           <figure class="portfolio__card">
-            <img src="~assets/images/bg2.jpg" alt="" />
+            <img src="~assets/images/portfolio/sooman.jpg" alt="sooman" />
             <figcaption>
-              <h3>Project Name{{ i }}</h3>
-              <p>Graphic</p>
-              <fa :icon="['fab', 'vuejs']" />
-              <a class="image-link" href="img/portfolio/img-1.jpg"></a>
+              <h3>Sooman Che Website</h3>
+              <p>Frontend</p>
+              <v-svg view-box="0 0 32 32" width="1em" height="1em"
+                ><icons-icon-nuxt
+              /></v-svg>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="portfolio__card-wrapper public">
+          <figure class="portfolio__card">
+            <img src="~assets/images/portfolio/coffeenie.jpg" alt="coffeenie" />
+            <figcaption>
+              <h3>Realtime Booking System</h3>
+              <p>Fullstack</p>
+              <v-svg
+                view-box="0 0 32 32"
+                width="1em"
+                height="1em"
+                style="right: 24px"
+                ><icons-icon-nuxt
+              /></v-svg>
+              <v-svg view-box="0 0 32 32"><icons-icon-spring /></v-svg>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="portfolio__card-wrapper public">
+          <figure class="portfolio__card">
+            <img src="~assets/images/portfolio/smartair.jpg" alt="smartair" />
+            <figcaption>
+              <h3>Smart Air Screen</h3>
+              <p>Backend</p>
+              <v-svg view-box="0 0 32 32"><icons-icon-spring /></v-svg>
             </figcaption>
           </figure>
         </div>
@@ -52,9 +70,6 @@ export default {
     isotope: {},
   }),
   mounted() {
-    // if (process.server) {
-    //   return
-    // }
     require('simplebar')
     const imagesLoaded = require('imagesloaded')
     const Isotope = require('isotope-layout')
