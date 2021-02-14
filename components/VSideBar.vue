@@ -18,7 +18,7 @@
             <n-link
               class="search__link"
               :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-              @click.native="searchKeyword = ''"
+              @click.native="clickArticle"
               >{{ article.title }}</n-link
             >
           </li>
@@ -72,6 +72,10 @@ export default {
   methods: {
     closeEmit() {
       this.$emit('toggle-sidebar', false)
+    },
+    clickArticle() {
+      this.searchKeyword = ''
+      this.closeEmit()
     },
   },
 }

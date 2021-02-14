@@ -33,44 +33,25 @@ export default {
     getImage() {
       return require(`~/assets/images/${this.src}`)
     },
-    aspectRatio() {
-      if (!this.getImage.width || !this.getImage.height) {
-        return null
-      }
-
-      return (this.getImage.height / this.getImage.width) * 100
-    },
     style() {
-      const style = {}
-
-      if (this.getImage.width) {
-        style.width = `${this.getImage.width}px`
+      return {
+        width: `${this.getImage.width}px`,
+        aspectRatio: `${this.getImage.width}/${this.getImage.height}`,
       }
-
-      const applyAspectRatio = this.loading && this.aspectRatio
-      if (applyAspectRatio) {
-        style.height = 0
-        style.paddingTop = `${this.aspectRatio}%`
-      }
-
-      return style
     },
   },
   mounted() {
-    const selector = this.$el.querySelector('.lozad')
-    const observer = lozad(selector, {
-      loaded: () => {
-        setTimeout(() => {
-          this.loading = false
-        }, 500)
-      },
-    })
+    const observer = lozad()
     observer.observe()
   },
 }
 </script>
 
 <style>
+.image {
+  display: flex;
+  justify-content: center;
+}
 img.lozad {
   max-width: 100%;
   max-height: 100%;

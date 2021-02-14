@@ -96,7 +96,13 @@ export default {
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-atom-dark.css',
+      },
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -134,8 +140,8 @@ export default {
         test: /\.(png|jpe?g|webp)$/,
         loader: 'responsive-loader',
         options: {
-          quality: 60,
-          sizes: [960],
+          quality: 100,
+          sizes: [930],
           adapter: require('responsive-loader/sharp'),
           format: 'webp',
         },
