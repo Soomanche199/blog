@@ -74,6 +74,14 @@
         <li>
           <v-svg view-box="0 0 2500 2500"><icons-icon-heroku /></v-svg>
         </li>
+        <li>
+          <v-svg view-box="20.7 244.9 600.3 154.7" height="1.2em" width="1.2em"
+            ><icons-icon-docker
+          /></v-svg>
+        </li>
+        <li>
+          <v-svg view-box="0 0 882.7 688.6"><icons-icon-nginx /></v-svg>
+        </li>
       </ul>
     </div>
     <v-footer />
