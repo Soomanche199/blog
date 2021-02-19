@@ -107,22 +107,24 @@
           </ul>
         </li>
         <li>
-          <h3 class="experience__position">Fullstack Dev (Freelancer)</h3>
+          <h3 class="experience__position">Backend Dev (Freelancer)</h3>
           <h4 class="experience__company">@Eco C&A</h4>
           <span class="experience__date">Mar.2019 ~ Apr.2019 | 2Months</span>
           <ul class="experience__list">
             <li>Developing capital air environment managing system</li>
+            <li>Preprocessing car exhaust emission data</li>
             <li>
               Setting up Server at NATIONAL INSTITUTE OF ENVIRONMENTAL RESEARC
             </li>
           </ul>
         </li>
         <li>
-          <h3 class="experience__position">Fullstack Dev (Freelancer)</h3>
+          <h3 class="experience__position">Backend Dev (Freelancer)</h3>
           <h4 class="experience__company">@Eco C&A</h4>
           <span class="experience__date">Fab.2018 ~ Dec.2018 | 11Months</span>
           <ul class="experience__list">
             <li>Developing capital air environment managing system</li>
+            <li>Preprocessing air environment data likes PM10, PM2.5</li>
           </ul>
         </li>
         <li>
@@ -131,6 +133,7 @@
           <span class="experience__date">Jun.2017 ~ Dec.2017 | 7Months</span>
           <ul class="experience__list">
             <li>Web Dev with Egov framework</li>
+            <li>Preprocessing air environment data likes PM10, PM2.5</li>
             <li>Participation in environmental consulting research service</li>
           </ul>
         </li>
