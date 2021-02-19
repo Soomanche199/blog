@@ -25,8 +25,8 @@
           <img src="~assets/images/profile.png" />
         </div>
       </div>
-      <h2><strong>Frontend</strong> Skills</h2>
-      <ul>
+      <h2>Skills of <strong>Frontend</strong></h2>
+      <ul class="skills">
         <li><fa :icon="['fab', 'js-square']" /></li>
         <li><fa :icon="['fab', 'css3-alt']" /></li>
         <li>
@@ -51,8 +51,8 @@
           /></v-svg>
         </li>
       </ul>
-      <h2>Skills of <strong>Backend</strong></h2>
-      <ul>
+      <h2><strong>Backend</strong> skills</h2>
+      <ul class="skills">
         <li><fa :icon="['fab', 'java']" /></li>
         <li><fa :icon="['fab', 'centos']" /></li>
         <li><fa :icon="['fab', 'ubuntu']" /></li>
@@ -81,6 +81,70 @@
         </li>
         <li>
           <v-svg view-box="0 0 882.7 688.6"><icons-icon-nginx /></v-svg>
+        </li>
+      </ul>
+      <h2>Work <strong>Experience</strong></h2>
+      <ul class="experience">
+        <li>
+          <h3 class="experience__position">Fullstack Dev(Freelancer)</h3>
+          <h4 class="experience__company">@Studio017</h4>
+          <span class="experience__date">Dec.2020 ~ Fab.2021 | 3Months</span>
+          <ul class="experience__list">
+            <li>Developing realtime cake reservation system</li>
+            <li>
+              Applying Js EventSource and Spring Event on admin page and stock
+              monitoring
+            </li>
+            <li>Stack: Springboot, JPA, Nuxt, Postcss, Markdown</li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="experience__position">Solution Engineer</h3>
+          <h4 class="experience__company">@Dream Security</h4>
+          <span class="experience__date">Oct.2019 ~ Fab.2020 | 5Months</span>
+          <ul class="experience__list">
+            <li>Maintenance Internet Banking Service Certificate solution</li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="experience__position">Fullstack Dev (Freelancer)</h3>
+          <h4 class="experience__company">@Eco C&A</h4>
+          <span class="experience__date">Mar.2019 ~ Apr.2019 | 2Months</span>
+          <ul class="experience__list">
+            <li>Developing capital air environment managing system</li>
+            <li>
+              Setting up Server at NATIONAL INSTITUTE OF ENVIRONMENTAL RESEARC
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="experience__position">Fullstack Dev (Freelancer)</h3>
+          <h4 class="experience__company">@Eco C&A</h4>
+          <span class="experience__date">Fab.2018 ~ Dec.2018 | 11Months</span>
+          <ul class="experience__list">
+            <li>Developing capital air environment managing system</li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="experience__position">Assistant Engineer</h3>
+          <h4 class="experience__company">@Eco C&A</h4>
+          <span class="experience__date">Jun.2017 ~ Dec.2017 | 7Months</span>
+          <ul class="experience__list">
+            <li>Web Dev with Egov framework</li>
+            <li>Participation in environmental consulting research service</li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="experience__position">Solution Engineer</h3>
+          <h4 class="experience__company">@Nexus Community</h4>
+          <span class="experience__date">Apr.2016 ~ Dec.2016 | 9Months</span>
+          <ul class="experience__list">
+            <li>Integrate and maintenance Soft PBX, VRS and IVR</li>
+            <li>Operate cloud contect system that name as CAIRO</li>
+            <li>
+              Writing official in-house training documents for new recruits.
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -142,7 +206,7 @@ h2 {
   margin-bottom: 13px;
 }
 
-h2 ~ ul {
+.skills {
   font-size: 72px;
   margin-bottom: 50px;
   display: flex;
@@ -168,11 +232,33 @@ h2 ~ ul {
   }
 }
 
-h2 ~ ul li:hover {
+.skills li:hover {
   border: 1px solid rgba(0, 169, 162, 1);
 
   & svg {
     transform: scale(1.2);
+  }
+}
+
+.experience {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.experience__position {
+  color: #00a9a2;
+  opacity: 0.6;
+}
+
+.experience__date {
+  opacity: 0.6;
+}
+
+.experience__list {
+  padding-bottom: 16px;
+
+  & li::before {
+    content: '- ';
   }
 }
 
