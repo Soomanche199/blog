@@ -12,6 +12,7 @@ export default {
       'faSearch',
       'faUser',
       'faMapMarkedAlt',
+      'faGlobeAsia',
     ],
     // include all icons. But dont do this.
     brands: [

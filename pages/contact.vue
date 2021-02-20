@@ -159,24 +159,6 @@ h2 {
   & h2 {
     color: #00a9a2;
   }
-
-  & button {
-    margin-top: 16px;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: 500;
-    background-color: rgba(106, 86, 250, 0.15);
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    color: #6a55fa;
-    cursor: pointer;
-
-    &[disabled] {
-      opacity: 0.5;
-      cursor: initial;
-    }
-  }
 }
 
 .input-group {

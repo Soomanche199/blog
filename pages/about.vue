@@ -31,28 +31,28 @@
         <li><fa :icon="['fab', 'css3-alt']" /></li>
         <li>
           <v-svg width="1em" height="1em" view-box="0 0 256 256"
-            ><icons-icon-postcss
+            ><icon-postcss
           /></v-svg>
         </li>
         <li><fa :icon="['fab', 'vuejs']" /></li>
         <li>
           <v-svg view-box="0 0 32 32" width="1em" height="1em"
-            ><icons-icon-nuxt
+            ><icon-nuxt
           /></v-svg>
         </li>
         <li>
           <v-svg view-box="0 0 32 32" width="1em" height="1em"
-            ><icons-icon-webpack
+            ><icon-webpack
           /></v-svg>
         </li>
         <li>
           <v-svg view-box="0 0 32 32" width="1em" height="1em"
-            ><icons-icon-jquery
+            ><icon-jquery
           /></v-svg>
         </li>
         <li>
           <v-svg view-box="0 0 32 32" width="1em" height="1em"
-            ><icons-icon-tailwind
+            ><icon-tailwind
           /></v-svg>
         </li>
         <li>
@@ -66,29 +66,29 @@
         <li><fa :icon="['fab', 'ubuntu']" /></li>
         <li><fa :icon="['fab', 'aws']" /></li>
         <li>
-          <v-svg view-box="0 0 32 32"><icons-icon-spring /></v-svg>
+          <v-svg view-box="0 0 32 32"><icon-spring /></v-svg>
         </li>
         <li>
-          <v-svg view-box="0 0 256 267"><icons-icon-hibernate /></v-svg>
+          <v-svg view-box="0 0 256 267"><icon-hibernate /></v-svg>
         </li>
         <li>
-          <v-svg view-box="0 0 256 170"><icons-icon-mariadb /></v-svg>
+          <v-svg view-box="0 0 256 170"><icon-mariadb /></v-svg>
         </li>
         <li>
           <v-svg view-box="0 0 678 103.4" width="1.2em" height="1.2em"
-            ><icons-icon-vmware
+            ><icon-vmware
           /></v-svg>
         </li>
         <li>
-          <v-svg view-box="0 0 2500 2500"><icons-icon-heroku /></v-svg>
+          <v-svg view-box="0 0 2500 2500"><icon-heroku /></v-svg>
         </li>
         <li>
           <v-svg view-box="20.7 244.9 600.3 154.7" height="1.2em" width="1.2em"
-            ><icons-icon-docker
+            ><icon-docker
           /></v-svg>
         </li>
         <li>
-          <v-svg view-box="0 0 882.7 688.6"><icons-icon-nginx /></v-svg>
+          <v-svg view-box="0 0 882.7 688.6"><icon-nginx /></v-svg>
         </li>
       </ul>
       <h2>Work <strong>Experience</strong></h2>
@@ -127,7 +127,7 @@
             <li>Developing capital air environment managing system</li>
             <li>Preprocessing car exhaust emission data</li>
             <li>
-              Setting up Server at NATIONAL INSTITUTE OF ENVIRONMENTAL RESEARC
+              Setting up Server at NATIONAL INSTITUTE OF ENVIRONMENTAL RESEARCH
             </li>
           </ul>
         </li>
