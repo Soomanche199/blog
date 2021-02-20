@@ -50,6 +50,14 @@
             ><icons-icon-jquery
           /></v-svg>
         </li>
+        <li>
+          <v-svg view-box="0 0 32 32" width="1em" height="1em"
+            ><icons-icon-tailwind
+          /></v-svg>
+        </li>
+        <li>
+          <fa :icon="['fab', 'bootstrap']" />
+        </li>
       </ul>
       <h2><strong>Backend</strong> skills</h2>
       <ul class="skills">
@@ -104,6 +112,11 @@
           <span class="experience__date">Oct.2019 ~ Fab.2020 | 5Months</span>
           <ul class="experience__list">
             <li>Maintenance Internet Banking Service Certificate solution</li>
+            <li>Maintenance mobile E2E encrypting solution</li>
+            <li>
+              Create sample code with Spring framework and got rid of legacy
+              plain java code
+            </li>
           </ul>
         </li>
         <li>
@@ -128,7 +141,7 @@
           </ul>
         </li>
         <li>
-          <h3 class="experience__position">Assistant Engineer</h3>
+          <h3 class="experience__position">Assistant Research Engineer</h3>
           <h4 class="experience__company">@Eco C&A</h4>
           <span class="experience__date">Jun.2017 ~ Dec.2017 | 7Months</span>
           <ul class="experience__list">

@@ -29,7 +29,7 @@
         </div>
         <div class="portfolio__card-wrapper public">
           <figure class="portfolio__card">
-            <img src="~assets/images/portfolio/coffeenie.jpg" alt="coffeenie" />
+            <img src="~assets/images/portfolio/coffeenie.png" alt="coffeenie" />
             <figcaption>
               <h3>Realtime Booking System</h3>
               <p>Fullstack</p>
@@ -46,7 +46,7 @@
         </div>
         <div class="portfolio__card-wrapper public">
           <figure class="portfolio__card">
-            <img src="~assets/images/portfolio/smartair.jpg" alt="smartair" />
+            <img src="~assets/images/portfolio/smartair.png" alt="smartair" />
             <figcaption>
               <h3>Smart Air Screen</h3>
               <p>Backend</p>

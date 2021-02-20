@@ -23,6 +23,7 @@ export default {
       'faAws',
       'faVuejs',
       'faSlack',
+      'faBootstrap',
     ],
     regular: [],
   },
