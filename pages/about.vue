@@ -138,6 +138,7 @@
           <ul class="experience__list">
             <li>Developing capital air environment managing system</li>
             <li>Preprocessing air environment data likes PM10, PM2.5</li>
+            <li>Conversion PHP based legacy code to Java</li>
           </ul>
         </li>
         <li>
