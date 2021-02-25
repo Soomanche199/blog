@@ -1,8 +1,8 @@
 ---
 category: front-end
-title: Use svg icon on Vue.js
+title: Use svg icon on Vue.js 2.x
 image: blog/use_svg_image_on_vue/main.jpg
-tags: ['vue', 'svg']
+tags: ['vue2', 'svg']
 createdAt: 2021-02-24T00:30:00.000Z
 ---
 

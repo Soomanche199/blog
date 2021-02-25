@@ -1,5 +1,5 @@
 ---
-category: front-end::::
+category: front-end
 title: Prevent image reflow(Draft)
 image: blog/prevent_image_reflow/main.jpg
 tags: ['html','optimization','reflow']
