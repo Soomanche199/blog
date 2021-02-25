@@ -43,7 +43,7 @@ export default {
     this.articles = await this.$content('blog')
       .limit(this.pagination.articlesPerPage)
       .skip((this.pagination.currentPage - 1) * this.pagination.articlesPerPage)
-      .sortBy('updatedAt', 'desc')
+      .sortBy('createdAt', 'desc')
       .fetch()
 
     let endPageNumber =
