@@ -51,6 +51,7 @@ export default {
 .image {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 img.lozad {
   max-width: 100%;
@@ -59,6 +60,10 @@ img.lozad {
   height: auto;
   vertical-align: middle;
   background-color: #95a4b7;
+
+  & data[loaded='true'] {
+    background-color: transparent;
+  }
 }
 
 .image__caption {

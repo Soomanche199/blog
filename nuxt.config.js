@@ -99,7 +99,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-atom-dark.css',
+        theme: false,
       },
     },
   },
@@ -141,7 +141,7 @@ export default {
         loader: 'responsive-loader',
         options: {
           quality: 100,
-          sizes: [930],
+          sizes: [1500],
           adapter: require('responsive-loader/sharp'),
           format: 'webp',
         },

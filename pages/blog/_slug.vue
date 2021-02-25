@@ -32,7 +32,7 @@
 import childTransition from '@/mixins/childTransition'
 import getSiteMeta from '@/utils/getSiteMeta'
 import metaGlobal from '@/utils/metaGlobal'
-
+import Prism from '~/plugins/prism'
 export default {
   name: 'Slug',
   mixins: [childTransition],
@@ -84,6 +84,9 @@ export default {
       return getSiteMeta(metaData)
     },
   },
+  mounted() {
+    Prism.highlightAll()
+  },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
@@ -129,7 +132,7 @@ export default {
 
   & a {
     text-decoration: none;
-    color: #1a2738;
+    color: #e9e6fe;
     padding: 5px 10px;
     display: block;
   }
