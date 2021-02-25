@@ -63,8 +63,6 @@ Let's get icon from https://icomoon.io/app/#/select.
 
 <v-image src="blog/use_svg_image_on_vue/get_code.jpg" caption>Copy SVG code</v-image>
 
-이미지를 선택후 Generate SVG 메뉴에서 선택한 아이콘의 get code 버튼을 클릭한다. 그러면 위와 같은 화면을 볼 수 있는데,
-위의 이미지에 선택된 부분을 가져와 컴포넌트로 만들것이다. 선택한 라인의 윗 라인을 보면 viewBox 크기를 기억해놓도록 한다.
 In the Create SVG menu, click the Get Code button for the selected icon. Then you can see the screen like above.
 Select it like the image above and make it a component. If you look at the line above the selected line, remember the size of the viewBox.
 
