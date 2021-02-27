@@ -31,7 +31,7 @@ export default {
   }),
   computed: {
     getImage() {
-      return require(`~/assets/images/${this.src}`)
+      return require(`~/assets/images${this.$route.path + '/' + this.src}`)
     },
     style() {
       return {

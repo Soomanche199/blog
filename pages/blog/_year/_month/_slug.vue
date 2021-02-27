@@ -34,10 +34,23 @@ import getSiteMeta from '@/utils/getSiteMeta'
 import metaGlobal from '@/utils/metaGlobal'
 import Prism from '~/plugins/prism'
 export default {
-  name: 'Slug',
+  name: 'BlogSlug',
   mixins: [childTransition],
-  async asyncData({ $content, params }) {
-    return { article: await $content('blog', params.slug).fetch() }
+  async asyncData({ $content, error, params }) {
+    const articlePath = ['/blog', params.year, params.month, params.slug].join(
+      '/'
+    )
+    try {
+      const [article] = await $content('blog', { deep: true })
+        .where({ path: articlePath })
+        .fetch()
+      return { article }
+    } catch (err) {
+      error({
+        statusCode: 404,
+        message: 'Page could not be found',
+      })
+    }
   },
   head() {
     return {
@@ -76,10 +89,12 @@ export default {
         type: 'article',
         title: this.article.title,
         description: this.article.description,
-        url: `${metaGlobal.siteUrl}/blog/${this.$route.params.slug}`,
+        url: `${metaGlobal.siteUrl + this.article.path}`,
         mainImage:
           this.article.image &&
-          require(`~/assets/images/${this.article.image}`).src,
+          require(`~/assets/images${
+            this.article.path + '/' + this.article.image
+          }`).src,
       }
       return getSiteMeta(metaData)
     },

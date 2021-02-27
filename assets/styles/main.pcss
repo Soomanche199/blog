@@ -143,7 +143,7 @@ button {
     margin-top: 26px;
     border-bottom: 1px solid #7589a2;
 
-    & ~ p{
+    & + p{
       margin-top: 12px;
     }
   }
@@ -155,6 +155,7 @@ button {
   & a{
     text-decoration: none;
     color: #6a55fa;
+    word-break: break-all;
   }
 
   & figure{
@@ -195,7 +196,7 @@ button {
       margin-top: 58px;
       border-bottom: 1px solid #7589a2;
 
-      & ~ p{
+      & + p{
         margin-top: 18px;
       }
     }
@@ -213,6 +214,14 @@ button {
         margin-top: 24px;
       }
     }
+  }
+}
+
+.nuxt-content-highlight{
+  margin-top: 40px;
+
+  @media (min-width: 960px) {
+    margin-top: 56px;
   }
 }
 

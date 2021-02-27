@@ -126,7 +126,7 @@ export default {
       })
     },
     getImage(src) {
-      return require(`~/assets/images/${src}`)
+      return require(`~/assets/images/portfolio/${src}`)
     },
     openModal(index) {
       this.showModal = true

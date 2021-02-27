@@ -1,20 +1,19 @@
 ---
 category: front-end
-title: Use Summernote with Nuxt.js 
-image: blog/use_summernote_with_nuxt/main.jpg
+title: Using Summernote with Nuxt.js 
+image: main.jpg
 tags: ['yarn','jquery','summernote']
 createdAt: 2021-02-25T00:30:00.000Z
 ---
 
-<v-image src="blog/use_summernote_with_nuxt/main.jpg"></v-image>
+<v-image src="main.jpg"></v-image>
 
 Personally, I avoid using jQuery because the bundle capacity increases.
 Nevertheless, Summernote is light and easy to use, so it is well worth using.
-Usually, Tiptap usage rate is high in Vue,
-but Summernote is used when i want to work comfortably because you have to set up many parts,
+Usually, Tiptap usage rate is high in Vue, but Summernote <!--more--> is used
+when i want to work comfortably because you have to set up many parts,
 such as design settings and function settings, one by one.
 Let's find out how to use Summernote on Nuxt together.
-<!--more-->
 
 ## Install jQuery & Summernote
 ```shell

@@ -37,10 +37,12 @@ export default {
     this.pagination.currentPage = this.$route.query.page || 1
 
     this.pagination.totalArticleLength = (
-      await this.$content('blog').only(['slug', 'image']).fetch()
+      await this.$content('blog', { deep: true })
+        .only(['slug', 'dir', 'image'])
+        .fetch()
     ).length
 
-    this.articles = await this.$content('blog')
+    this.articles = await this.$content('blog', { deep: true })
       .limit(this.pagination.articlesPerPage)
       .skip((this.pagination.currentPage - 1) * this.pagination.articlesPerPage)
       .sortBy('createdAt', 'desc')

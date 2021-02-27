@@ -1,12 +1,12 @@
 ---
 category: front-end
-title: Use svg icon on Vue.js 2.x
-image: blog/use_svg_image_on_vue/main.jpg
+title: Using svg icon on Vue.js 2.x
+image: main.jpg
 tags: ['vue2', 'svg']
 createdAt: 2021-02-24T00:30:00.000Z
 ---
 
-<v-image src="blog/use_svg_image_on_vue/main.jpg"></v-image>
+<v-image src="main.jpg"></v-image>
 
 When front-end development, if the icon library you are using does not have the icon you want,
 so you can draw it yourself or take it over from the designer.
@@ -59,9 +59,9 @@ the default value for props is set to the most popular value for the site.
 ## Get SVG icon (with icomoon)
 Let's get icon from https://icomoon.io/app/#/select.
 
-<v-image src="blog/use_svg_image_on_vue/select_icon.jpg" caption>Select jQuery icon</v-image>
+<v-image src="select_icon.jpg" caption>Select jQuery icon</v-image>
 
-<v-image src="blog/use_svg_image_on_vue/get_code.jpg" caption>Copy SVG code</v-image>
+<v-image src="get_code.jpg" caption>Copy SVG code</v-image>
 
 In the Create SVG menu, click the Get Code button for the selected icon. Then you can see the screen like above.
 Select it like the image above and make it a component. If you look at the line above the selected line, remember the size of the viewBox.
@@ -92,7 +92,7 @@ We made the component under the name IconJquery. Now ready to use.
 
 Applying such as above, you can get the result.
 
-<v-image src="blog/use_svg_image_on_vue/result.jpg" caption>Result</v-image>
+<v-image src="result.jpg" caption>Result</v-image>
 
 ## Appendix 😋
 In the case of SVG code having multiple paths, it is grouped with g tag which means Group.
@@ -112,5 +112,4 @@ export default {
   name: 'IconHibernate',
 }
 </script>
-
 ```

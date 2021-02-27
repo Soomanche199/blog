@@ -3,7 +3,7 @@ title: Realtime Booking System
 description: As the store began to go viral and orders increased, making it difficult for employees to make reservations while working. so Developed real-time reservation system to solve this problem.
 period: 3Months (Under development)
 manMonth: Solo developed
-image: portfolio/coffeenie.png
+image: coffeenie.png
 role: Fullstack
 type: commercial
 createdAt: 2021-02-21T01:41:50.969Z

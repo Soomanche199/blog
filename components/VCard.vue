@@ -1,11 +1,7 @@
 <template>
   <div class="card">
     <div class="card__meta">
-      <v-bg-image
-        :src="article.image"
-        :style="{ backgroundSize: article.imageSize }"
-        class="card__image"
-      />
+      <v-bg-image :src="getImage" class="card__image" />
     </div>
     <div class="card__content">
       <div class="card__body">
@@ -15,9 +11,7 @@
       </div>
       <div class="card__footer">
         <p>
-          <n-link :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-            >Read More</n-link
-          >
+          <n-link :to="article.path">Read More</n-link>
         </p>
       </div>
     </div>
@@ -31,6 +25,11 @@ export default {
     article: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    getImage() {
+      return [this.article.dir, this.article.slug, this.article.image].join('/')
     },
   },
 }
