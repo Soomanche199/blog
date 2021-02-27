@@ -31,9 +31,7 @@ export default {
   }),
   computed: {
     getImage() {
-      const path = this.$route.path
-      const changedPath = path.endsWith('/') ? path.slice(0, -1) : path
-      return require(`~/assets/images${changedPath + '/' + this.src}`)
+      return require(`~/assets/images${this.src}`)
     },
     style() {
       return {

@@ -6,7 +6,7 @@ tags: ['yarn','jquery','summernote']
 createdAt: 2021-02-25T00:30:00.000Z
 ---
 
-<v-image src="main.jpg"></v-image>
+<v-image :src="path+'/main.jpg'"></v-image>
 
 Personally, I avoid using jQuery because the bundle capacity increases.
 Nevertheless, Summernote is light and easy to use, so it is well worth using.

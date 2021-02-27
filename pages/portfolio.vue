@@ -2,7 +2,7 @@
   <div class="page portfolio" data-simplebar>
     <div class="container">
       <v-modal v-if="showModal" @close="showModal = false">
-        <v-image :src="articles[targetIndex].image"></v-image>
+        <v-image :src="'/portfolio/' + articles[targetIndex].image"></v-image>
         <h2>{{ articles[targetIndex].title }}</h2>
         <h3>
           {{ articles[targetIndex].manMonth }} |

@@ -6,7 +6,7 @@ tags: ['html','optimization','reflow']
 createdAt: 2021-02-21T00:30:00.000Z
 ---
 
-<v-image src="main.jpg"></v-image>
+<v-image :src="path+'/main.jpg'"></v-image>
 
 Nowadays, a lot of Lazy loading is used to speed up initial page loading and reduce data consumption. This is obviously
 a way to provide a good user experience, but there is one annoying problem. <!--more--> The problem is the reflow of

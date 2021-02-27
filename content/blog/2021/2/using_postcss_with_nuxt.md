@@ -6,7 +6,7 @@ tags: ['yarn', 'postcss','nuxt']
 createdAt: 2021-02-26T00:30:00.000Z
 ---
 
-<v-image src="main.jpg"></v-image>
+<v-image :src="path+'/main.jpg'"></v-image>
 
 I am programming mainly on backend development, but I am very interested in UI/UX.
 So I tried using the several CSS framework, and in the end, it was thought that best to deal with CSS directly.
@@ -28,7 +28,7 @@ When creating a project with the create nuxt app command,
 if you do not select the UI framework as shown in the picture below,
 Postcss is used as the default, so you can use it immediately.
 
-<v-image src="no_select.jpg"></v-image>
+<v-image :src="path+'/no_select.jpg'"></v-image>
 
 It's enough to use the default setting, but let's change the setting to use the 
 [nesting rule](https://preset-env.cssdb.org/features#nesting-rules) to better productivity.
@@ -82,7 +82,7 @@ Now let's link the main.css file we will use to the nuxt.
 css: ['assets/styles/main.pcss'],
 ```
 
-<v-image src="normalize.jpg" caption>applied normalize.css</v-image>
+<v-image :src="path+'/normalize.jpg'" caption>applied normalize.css</v-image>
 
 ## Extract the css variable
 Let's extract variables like scss and make them into a file.
@@ -144,4 +144,4 @@ export default {}
 ```
 
 ## Result
-<v-image src="result.gif" caption>result</v-image>
+<v-image :src="path+'/result.gif'" caption>result</v-image>
