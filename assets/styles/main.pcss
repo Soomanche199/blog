@@ -38,12 +38,6 @@ strong{
   background: #6a55fa;
 }
 
-code{
-  color: #00a9a2;
-  font-family: inherit;
-  font-weight: 500;
-}
-
 #main{
   min-height: 100vh;
   position: relative;
@@ -219,9 +213,20 @@ button {
 
 .nuxt-content-highlight{
   margin-top: 40px;
+  position: relative;
 
   @media (min-width: 960px) {
     margin-top: 56px;
+  }
+
+  & .filename{
+    position: absolute;
+    right: 0;
+    color: #718096;
+    z-index: 10;
+    margin-right: .5rem;
+    margin-top: .25em;
+    font-size: .875rem;
   }
 }
 

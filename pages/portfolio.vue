@@ -76,17 +76,18 @@ import parentTransition from '@/mixins/parentTransition'
 export default {
   name: 'Portfolio',
   mixins: [parentTransition],
+  async asyncData({ $content }) {
+    const articles = await $content('portfolio')
+      .sortBy('createdAt', 'desc')
+      .fetch()
+    return { articles }
+  },
   data: () => ({
     isotope: {},
     articles: [],
     targetIndex: 0,
     showModal: false,
   }),
-  async fetch() {
-    this.articles = await this.$content('portfolio')
-      .sortBy('createdAt', 'desc')
-      .fetch()
-  },
   mounted() {
     require('simplebar')
     const imagesLoaded = require('imagesloaded')

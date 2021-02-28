@@ -96,7 +96,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: false,
+        theme: 'prism-themes/themes/prism-material-oceanic.css',
       },
     },
   },
@@ -148,6 +148,7 @@ export default {
   googleFonts: {
     families: {
       'Dancing+Script': [700],
+      'Roboto+Mono': [400],
       'Noto+Sans+KR': [400, 500, 700],
     },
   },

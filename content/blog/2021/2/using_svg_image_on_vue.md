@@ -18,7 +18,7 @@ First, we analyze the forms from SVG images to extract common parts,
 which can be simplified into namespace, width, height, and viewBox.
 We'll make this common part into a template and make it into a component for reuse.
 Let's look at the code together.
-```vue
+```vue[VSvg.vue]
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ Let's get icon from https://icomoon.io/app/#/select.
 In the Create SVG menu, click the Get Code button for the selected icon. Then you can see the screen like above.
 Select it like the image above and make it a component. If you look at the line above the selected line, remember the size of the viewBox.
 
-```vue
+```vue[IconJquery.vue]
 <template>
   <path
     fill="currentColor"
@@ -83,8 +83,7 @@ export default {
 We made the component under the name IconJquery. Now ready to use.
 
 ## Use SVG component
-```vue
-<!--import components...-->
+```vue[SomeComponent.vue]
 <v-svg view-box="0 0 32 32" width="1em" height="1em">
   <icon-jquery />
 </v-svg>
@@ -96,7 +95,7 @@ Applying such as above, you can get the result.
 
 ## Appendix 😋
 In the case of SVG code having multiple paths, it is grouped with g tag which means Group.
-```vue
+```vue[IconHibernate.vue]
 <template>
   <g>
     <path d="M0 0h2500v2500H0z" fill="currentColor" />

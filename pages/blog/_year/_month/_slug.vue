@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :key="article.slug" class="container">
     <!--    <ul>-->
     <!--      <li-->
     <!--        v-for="link of article.toc"-->
@@ -16,7 +16,7 @@
     <h1 class="article__title">{{ article.title }}</h1>
     <div class="article__writer"></div>
 
-    <nuxt-content :document="article" />
+    <nuxt-content ref="content" :document="article" />
 
     <div class="article__meta">
       <ul class="tags">
@@ -34,7 +34,6 @@ import getSiteMeta from '@/utils/getSiteMeta'
 import metaGlobal from '@/utils/metaGlobal'
 import Prism from '~/plugins/prism'
 export default {
-  name: 'BlogSlug',
   mixins: [childTransition],
   async asyncData({ $content, error, params }) {
     const articlePath = ['/blog', params.year, params.month, params.slug].join(
@@ -100,6 +99,9 @@ export default {
     },
   },
   mounted() {
+    Prism.highlightAll()
+  },
+  updated() {
     Prism.highlightAll()
   },
   methods: {

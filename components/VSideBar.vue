@@ -17,7 +17,7 @@
           >
             <n-link
               class="search__link"
-              :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+              :to="getRoute(article)"
               @click.native="clickArticle"
               >{{ article.title }}</n-link
             >
@@ -62,10 +62,10 @@ export default {
         this.articles = []
         return
       }
-      this.articles = await this.$content('blog')
+      this.articles = await this.$content('blog', { deep: true })
         .limit(6)
         .search(keyword)
-        .only(['title', 'slug'])
+        .only(['title', 'slug', 'path'])
         .fetch()
     },
   },
@@ -76,6 +76,17 @@ export default {
     clickArticle() {
       this.searchKeyword = ''
       this.closeEmit()
+    },
+    getRoute(article) {
+      const path = article.path.split('/')
+      return {
+        name: 'blog-year-month-slug',
+        params: {
+          year: path[2],
+          month: path[3],
+          slug: path[4],
+        },
+      }
     },
   },
 }

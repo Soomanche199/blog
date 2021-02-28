@@ -34,8 +34,7 @@ It's enough to use the default setting, but let's change the setting to use the
 [nesting rule](https://preset-env.cssdb.org/features#nesting-rules) to better productivity.
 To configure the Postcss-preset-env that embedded on Nuxt, write as follows. 
 
-```js
-// nuxt.config.js
+```js[nuxt.config.js]
 build: {
     postcss: {
       plugins: {
@@ -58,7 +57,7 @@ and can be added selectively as desired functionality.
 Since stage1 does not fully understand what functionality it has,
 it prefers to use it selectively to avoid unwanted consequences. Read more at https://preset-env.cssdb.org/.
 
-## Install postcss-normalize(normalize.css)
+## Install postcss-normalize (normalize.css)
 Although there are several css initialization codes, i am prefer normalize.css 
 because it is relatively short and standardizes only a few different parts of each browser.
 With postcss-normalize, the normalize code is inserted according to the type of browser. Let's install it.
@@ -67,18 +66,16 @@ With postcss-normalize, the normalize code is inserted according to the type of 
 yarn add -D postcss-normalize
 ```
 
-The method of use is simple. You only need to declare `@import-normalize` in the css file to be used.
+The method of use is simple. You only need to declare **@import-normalize** in the css file to be used.
 We will make a global css file and insert the code. Create main.css inside the assets directory.
 
-```css
-/* main.css */
+```css[main.css]
 @import-normalize
 ```
 
 ## Using global Css
 Now let's link the main.css file we will use to the nuxt.
-```js
-// nuxt.config.js
+```js[nuxt.config.js]
 css: ['assets/styles/main.pcss'],
 ```
 
@@ -89,21 +86,18 @@ Let's extract variables like scss and make them into a file.
 This is because frequently used values, such as color values, shadow values, and breakpoint values,
 can be extracted as variables, making them easier to modify later.
 Create assets/variables.css and type the code below.
-```css
-/* variables.css */
+```css[variables.css]
 :root {
   --sea-pink: #de98ab;
   --corn-flower-blue: #6495ed;
 }
 ```
-`:root` means html element and is used to declare global variables. Modify nuxt.config.js to use variables.css in nuxt.
+**:root** means html element and is used to declare global variables. Modify nuxt.config.js to use variables.css in nuxt.
 Then try using the variable in the index.vue file.
-```js
-// nuxt.config.js
+```js[nuxt.config.js]
 css: ['assets/styles/variables.pcss', 'assets/styles/main.pcss'],
 ```
-```html
-<!--index.vue-->
+```html[index.vue]
 <template>
   <div class="container">
     <div>

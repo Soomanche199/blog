@@ -21,7 +21,7 @@ yarn add jquery summernote
 ```
 ## Summernote component
 Lets make summernote component follow below code.
-```vue
+```vue[VEditor.vue]
 <template>
   <div class="editor"></div>
 </template>
@@ -62,7 +62,7 @@ export default {
 </script>
 ```
 The part you should pay attention to is the customized Vue event part
-and the part where you import the library from the `mounted hook`.
+and the part where you import the library from the **mounted hook**.
 
 ## Why event customizing needed?
 This is to easily bind data using the v-model directory.
