@@ -138,4 +138,4 @@ export default {}
 ```
 
 ## Result
-<v-image :src="path+'/result.gif'" caption>result</v-image>
+<v-image :src="path+'/result.gif'" ratio="1893/895" caption>result</v-image>

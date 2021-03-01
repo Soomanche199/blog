@@ -3,7 +3,7 @@ category: front-end
 title: Using svg icon on Vue.js 2.x
 image: main.jpg
 tags: ['vue2', 'svg']
-createdAt: 2021-02-24T00:30:00.000Z
+createdAt: 2021-02-24
 ---
 
 <v-image :src="path+'/main.jpg'"></v-image>

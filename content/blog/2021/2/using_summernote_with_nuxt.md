@@ -3,7 +3,7 @@ category: front-end
 title: Using Summernote with Nuxt.js 
 image: main.jpg
 tags: ['yarn','jquery','summernote']
-createdAt: 2021-02-25T00:30:00.000Z
+createdAt: 2021-02-25
 ---
 
 <v-image :src="path+'/main.jpg'"></v-image>

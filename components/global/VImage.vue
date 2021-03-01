@@ -25,6 +25,10 @@ export default {
       type: String,
       default: '',
     },
+    ratio: {
+      type: String,
+      default: '',
+    },
   },
   data: () => ({
     loading: true,
@@ -34,8 +38,10 @@ export default {
       return require(`~/assets/images${this.src}`)
     },
     style() {
+      if (!this.getImage.width) {
+        return { aspectRatio: this.ratio }
+      }
       return {
-        width: `${this.getImage.width}px`,
         aspectRatio: `${this.getImage.width}/${this.getImage.height}`,
       }
     },

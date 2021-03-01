@@ -3,7 +3,7 @@ category: front-end
 title: Prevent image reflow
 image: main.jpg
 tags: ['html','optimization','reflow']
-createdAt: 2021-02-21T00:30:00.000Z
+createdAt: 2021-02-21
 ---
 
 <v-image :src="path+'/main.jpg'"></v-image>

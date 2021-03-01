@@ -138,6 +138,7 @@ export default {
         loader: 'responsive-loader',
         options: {
           quality: 100,
+          sizes: [1116],
           adapter: require('responsive-loader/sharp'),
           format: 'webp',
         },
