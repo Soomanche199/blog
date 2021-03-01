@@ -1,16 +1,19 @@
 <template>
   <div class="container">
-    <v-card
-      v-for="(article, index) in articles"
-      :key="article.slug"
-      :class="{ alt: index % 2 === 1 }"
-      :article="article"
-    />
+    <template v-if="$fetchState.pending"> <v-spinner /> </template>
+    <template v-else>
+      <v-card
+        v-for="(article, index) in articles"
+        :key="article.slug"
+        :class="{ alt: index % 2 === 1 }"
+        :article="article"
+      />
 
-    <v-pagination
-      v-if="pagination.pages.length > 0"
-      :pages="pagination.pages"
-    />
+      <v-pagination
+        v-if="pagination.pages.length > 0"
+        :pages="pagination.pages"
+      />
+    </template>
   </div>
 </template>
 

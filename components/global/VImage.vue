@@ -67,7 +67,7 @@ img.lozad {
   vertical-align: middle;
   background-color: #95a4b7;
 
-  & data[loaded='true'] {
+  &[data-loaded='true'] {
     background-color: transparent;
   }
 }
