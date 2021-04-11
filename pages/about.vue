@@ -7,8 +7,8 @@
           <p>
             Hello, I am <strong>Sooman Che</strong> from
             <strong>Seoul, Korea.</strong> I'm a 4th year developer, and now I'm
-            working as a freelancer. These days, coding is more fun than games,
-            so I am focusing on coding.
+            working at Alocados as web backend and frontend developer. These
+            days, coding is more fun than games, so I am focusing on coding.
           </p>
           <p>
             To become a better developer than yesterday, I am not neglecting my
@@ -93,6 +93,26 @@
       </ul>
       <h2>Work <strong>Experience</strong></h2>
       <ul class="experience">
+        <li>
+          <h3 class="experience__position">Fullstack Dev</h3>
+          <h4 class="experience__company">@Alocados</h4>
+          <span class="experience__date">Mar.2021 ~ now | 2Months</span>
+          <ul class="experience__list">
+            <li>Colawork</li>
+            <li>
+              Develop our service API with Springboot and provide services
+              through Slash command from Slack and Dooray.
+            </li>
+            <li>
+              Frontend development with Nuxt and implemented responsive web with
+              postcss.
+            </li>
+            <li>
+              Stack: Springboot, JPA, Querydsl, Nuxt, Postcss, AWS EC2, RDS, S3
+              etc...
+            </li>
+          </ul>
+        </li>
         <li>
           <h3 class="experience__position">Fullstack Dev(Freelancer)</h3>
           <h4 class="experience__company">@Studio017</h4>

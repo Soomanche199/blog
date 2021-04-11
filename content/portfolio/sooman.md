@@ -6,7 +6,7 @@ manMonth: Solo developed
 image: sooman.jpg
 role: Frontend
 type: private
-createdAt: 2021-01-21T01:41:50.969Z
+createdAt: 2021-01-21
 icons:
  - viewBox: 0 0 32 32
    width: 1em
